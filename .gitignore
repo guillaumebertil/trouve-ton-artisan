@@ -1,0 +1,25 @@
+# Fichiers de configuration sensibles
+.env
+*.env
+
+# Dépendances Node.js
+node_modules/
+npm-debug.log*
+
+# Fichiers de build
+build/
+dist/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
