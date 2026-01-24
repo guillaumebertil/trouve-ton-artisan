@@ -52,6 +52,7 @@ const Artisan = sequelize.define('Artisan', {
     email: {
         type: DataTypes.STRING(255),
         allowNull: false,
+        unique: true,
         validate: {
             isEmail: true
         },

@@ -83,8 +83,8 @@ CREATE TABLE artisans (
     CONSTRAINT fk_artisan_specialite
         FOREIGN KEY (specialite_id)
         REFERENCES specialites(id)
-        -- Supprime automatiquement les enregistrements enfants si le parent est supprimé
-        ON DELETE CASCADE
+        -- Empêche la suppression d'une spécialité si des artisans y sont encore rattachés
+        ON DELETE RESTRICT
         -- Met à jour automatiquement la clé étrangère si la clé primaire change
         ON UPDATE CASCADE,
 
