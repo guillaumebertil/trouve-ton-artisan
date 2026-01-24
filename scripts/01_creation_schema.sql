@@ -67,7 +67,7 @@ DROP TABLE IF EXISTS artisans;
 
 CREATE TABLE artisans (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
+    name VARCHAR(200) NOT NULL,
     specialite_id INT NOT NULL,
     note DECIMAL(2,1) CHECK (note >= 0 AND note <= 5),
     location VARCHAR(255) NOT NULL,
