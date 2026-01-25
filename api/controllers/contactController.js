@@ -1,9 +1,13 @@
+// Importations
+const { Artisan } = require('../models');
+
 /**
  * Traite l'envoi du formulaire de contact
+ * Simule l'envoi d'un email
  */
 exports.sendContactEmail = async (req, res, next) => {
     try {
-        const { name, email, message, artisan_id } = req.body;
+        const { name, email, subject, message, artisan_id } = req.body;
 
         // Récupération des informations de l'artisan
         const artisan = await Artisan.findByPk(artisan_id);
@@ -15,14 +19,12 @@ exports.sendContactEmail = async (req, res, next) => {
             });
         }
 
-        // Génération automatique du sujet
-        const subject = `Message de ${name} pour l'artisan ${artisan.name}`;
-
-        // Envoi de l'email
-        await emailService.sendContactEmail(
-            { name, email, subject, message },
-            artisan
-        );
+        // Simule l'envoi de l'email
+        console.log('Nouveau message reçu');
+        console.log(`Pour: ${artisan.name}, ${artisan.email}`);
+        console.log(`De: ${name}, ${email}`);
+        console.log(`Objet: ${subject}`);
+        console.log(`Message: ${message}`);
 
         res.status(200).json({
             success: true,
