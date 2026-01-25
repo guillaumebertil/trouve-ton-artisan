@@ -1,24 +1,17 @@
-const { Artisan }   = require('../models');
-const emailService  = require('../utils/emailService');
-
+/**
+ * Traite l'envoi du formulaire de contact
+ */
 exports.sendContactEmail = async (req, res, next) => {
     try {
         const { name, email, message, artisan_id } = req.body;
 
-        // Vérification des champs obligatoires
-        if (!name || !email || !message || !artisan_id) {
-            return res.status(400).json({
-                success: false,
-                message: 'Tous les champs sont obligatoires'
-            });
-        }
-
-        // Récupération de l'artisan
+        // Récupération des informations de l'artisan
         const artisan = await Artisan.findByPk(artisan_id);
+
         if (!artisan) {
             return res.status(404).json({
-                success: false,
-                message: 'Artisan non trouvé'
+            success: false,
+            message: 'Artisan non trouvé'
             });
         }
 
@@ -33,10 +26,11 @@ exports.sendContactEmail = async (req, res, next) => {
 
         res.status(200).json({
             success: true,
-            message: "Votre message a été envoyé avec succès. L'artisan vous répondra sous 48h."
+            message: 'Votre message a été envoyé avec succès. L\'artisan vous répondra sous 48h.'
         });
 
     } catch (error) {
+        console.error('Erreur lors de l\'envoi du message:', error);
         next(error);
     }
 };
