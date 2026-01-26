@@ -1,5 +1,5 @@
 // Importations
-const { Category } = require('../models/Category');
+const { Category } = require('../models');
 
 /**
  * Récupère toutes les catégories

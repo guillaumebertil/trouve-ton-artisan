@@ -17,6 +17,12 @@ exports.contactValidationRules = [
         .isEmail().withMessage('Email invalide')
         .normalizeEmail(),
 
+    body('subject')
+        .trim()
+        .notEmpty().withMessage('L\'objet est requis')
+        .isLength({ min: 3, max: 200 }).withMessage('L\'objet doit contenir entre 3 et 200 caractères')
+        .escape(),
+
     body('message')
         .trim()
         .notEmpty().withMessage('Le message est requis')
