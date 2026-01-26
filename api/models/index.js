@@ -10,8 +10,8 @@ Category.hasMany(Speciality, { foreignKey: 'category_id', as: 'specialities' });
 Speciality.belongsTo(Category, { foreignKey: 'category_id', as: 'category' });
 
 // Une spécialité possède plusieurs artisans
-Speciality.hasMany(Artisan, { foreignKey: 'speciality_id', as: 'artisans' });
-Artisan.belongsTo(Speciality, { foreignKey: 'speciality_id', as: 'speciality' });
+Speciality.hasMany(Artisan, { foreignKey: 'specialite_id', as: 'artisans' });
+Artisan.belongsTo(Speciality, { foreignKey: 'specialite_id', as: 'speciality' });
 
 module.exports = {
     Category,
