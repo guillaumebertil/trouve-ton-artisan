@@ -1,14 +1,26 @@
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import Header from './components/layout/Header.jsx';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Trouve ton artisan</h1>
-        <p>Application en cours de développement...</p>
-        <h3>Ceci est un sous titre</h3>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        {/* Header présent sur toutes les pages */}
+        <Header />
+
+        {/* Contenu principal*/}
+        <main>
+          <div className="container">
+            <h2><i className="bi bi-cone-striped h2"></i> Page d'accueil <i className="bi bi-cone-striped h2"></i></h2>
+            <p>Le contenu arrive bientôt...</p>
+          </div>
+        </main>
+
+        {/* Footer */}
+      </div>
+    </BrowserRouter>
   );
 }
 
