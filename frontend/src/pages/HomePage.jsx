@@ -9,9 +9,9 @@ const HomePage = () => {
     // Fonction qui charge les artisans depuis l'API
     useEffect(() => {
         // Appeler l'API
-        fetch('http://localhost:5000/api/artisans/top', {
+        fetch(`${process.env.REACT_APP_API_URL}/artisans/top`, {
             headers: {
-                'x-api-key': 'iA85qs10D4XVM8YC'
+                'x-api-key': process.env.REACT_APP_API_KEY
             }
         })
         .then(response => response.json())
