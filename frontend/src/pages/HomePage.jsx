@@ -61,49 +61,61 @@ const HomePage = () => {
                     <div className='row'>
                         {/* Artisan 1 - TEMPORAIRE */}
                         <div className='col-md-4 mb-4'>
-                            <div className='artisan-card'>
-                                <h3>Nom de l'artisan</h3>
-                                <div className='rating'>
-                                    <i className='bi bi-star-fill text-danger'></i>
-                                    <i className='bi bi-star-fill text-danger'></i>
-                                    <i className='bi bi-star-fill text-danger'></i>
-                                    <i className='bi bi-star-fill text-danger'></i>
-                                    <i className='bi bi-star-fill text-danger'></i>
+                            <div className='card'>
+                                <div className='card-header'>
+                                    <h3>Nom de l'artisan</h3>
                                 </div>
-                                <p><strong>Spécialité: </strong>Boulanger</p>
-                                <p><i className='bi bi-geo-alt'></i> Lyon</p>
+                                <div className='card-body'>
+                                    <div className='rating mb-3'>
+                                        <i className='bi bi-star-fill text-danger me-1'></i>
+                                        <i className='bi bi-star-fill text-danger mx-1'></i>
+                                        <i className='bi bi-star-fill text-danger mx-1'></i>
+                                        <i className='bi bi-star-fill text-danger mx-1'></i>
+                                        <i className='bi bi-star-fill text-danger ms-1'></i>
+                                    </div>
+                                    <p><strong>Spécialité: </strong>Boulanger</p>
+                                    <p><i className='bi bi-geo-alt'></i> Lyon</p>
+                                </div>
                             </div>
                         </div>
 
                         {/* Artisan 2 - TEMPORAIRE */}
                         <div className='col-md-4 mb-4'>
-                            <div className='artisan-card'>
-                                <h3>Nom de l'artisan</h3>
-                                <div className='rating'>
-                                    <i className='bi bi-star-fill text-danger'></i>
-                                    <i className='bi bi-star-fill text-danger'></i>
-                                    <i className='bi bi-star-fill text-danger'></i>
-                                    <i className='bi bi-star-fill text-danger'></i>
-                                    <i className='bi bi-star-fill text-danger'></i>
+                            <div className='card'>
+                                <div className='card-header'>
+                                    <h3>Nom de l'artisan</h3>
                                 </div>
-                                <p><strong>Spécialité: </strong>Electricien</p>
-                                <p><i className='bi bi-geo-alt'></i> Chamonix</p>
+                                <div className='card-body'>
+                                    <div className='rating mb-3'>
+                                        <i className='bi bi-star-fill text-danger me-1'></i>
+                                        <i className='bi bi-star-fill text-danger mx-1'></i>
+                                        <i className='bi bi-star-fill text-danger mx-1'></i>
+                                        <i className='bi bi-star-fill text-danger mx-1'></i>
+                                        <i className='bi bi-star-fill text-danger ms-1'></i>
+                                    </div>
+                                    <p><strong>Spécialité: </strong>Electricien</p>
+                                    <p><i className='bi bi-geo-alt'></i> Chamonix</p>
+                                </div>
                             </div>
                         </div>
 
                         {/* Artisan 3 - TEMPORAIRE */}
                         <div className='col-md-4 mb-4'>
-                            <div className='artisan-card'>
-                                <h3>Nom de l'artisan</h3>
-                                <div className='rating'>
-                                    <i className='bi bi-star-fill text-danger'></i>
-                                    <i className='bi bi-star-fill text-danger'></i>
-                                    <i className='bi bi-star-fill text-danger'></i>
-                                    <i className='bi bi-star-fill text-danger'></i>
-                                    <i className='bi bi-star-fill text-danger'></i>
+                            <div className='card'>
+                                <div className='card-header'>
+                                    <h3>Nom de l'artisan</h3>
                                 </div>
-                                <p><strong>Spécialité: </strong>Chocolatier</p>
-                                <p><i className='bi bi-geo-alt'></i> Lyon</p>
+                                <div className='card-body'>
+                                    <div className='rating mb-3'>
+                                        <i className='bi bi-star-fill text-danger me-1'></i>
+                                        <i className='bi bi-star-fill text-danger mx-1'></i>
+                                        <i className='bi bi-star-fill text-danger mx-1'></i>
+                                        <i className='bi bi-star-fill text-danger mx-1'></i>
+                                        <i className='bi bi-star-fill text-danger ms-1'></i>
+                                    </div>
+                                    <p><strong>Spécialité: </strong>Chcocolatier</p>
+                                    <p><i className='bi bi-geo-alt'></i> Lyon</p>
+                                </div>
                             </div>
                         </div>
 
