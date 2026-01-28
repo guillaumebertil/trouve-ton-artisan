@@ -23,6 +23,7 @@ const HomePage = () => {
             console.error('Erreur:', error);
         });
     }, []);
+    
     return (
         <main className='flex-grow-1'>
             {/* SECTION 1 : HERO */}
