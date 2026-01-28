@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import StarRating from '../components/common/StarRating';
+import ArtisanCard from '../components/common/ArtisanCard';
 
 const HomePage = () => {
     // Variables pour stocker les artisans
@@ -23,7 +23,7 @@ const HomePage = () => {
             console.error('Erreur:', error);
         });
     }, []);
-    
+
     return (
         <main className='flex-grow-1'>
             {/* SECTION 1 : HERO */}
@@ -85,32 +85,15 @@ const HomePage = () => {
                         {/* Boucle sur les artisans */}
                         {artisans.map((artisan) => (
                             <div key={artisan.id} className='col-md-4 mb-4'>
-
-                                {/* Card artisans */}
-                                <div className='card'>
-
-                                    {/* Card Header */}
-                                    <div className='card-header'>
-                                        <h3>{artisan.name}</h3>
-                                    </div>
-
-                                    {/* Card Body */}
-                                    <div className='card-body'>
-
-                                        {/* Note */}
-                                        <div className='rating mb-3'>
-                                            <StarRating note={artisan.note} />
-                                        </div>
-
-                                        {/* Spécialité */}
-                                        <p><strong>Spécialité: </strong>{artisan.speciality.name}</p>
-
-                                        {/* Localisation */}
-                                        <p><i className='bi bi-geo-alt'></i>{artisan.location}</p>
-                                    </div>
-                                </div>
+                                <ArtisanCard
+                                    id={artisan.id}
+                                    name={artisan.name}
+                                    note={artisan.note}
+                                    speciality={artisan.speciality.name}
+                                    location={artisan.location}
+                                />
                             </div>
-                        ))};
+                        ))}
 
                     </div>
                 </div>
