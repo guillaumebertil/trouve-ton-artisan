@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 
+// Pages
+import HomePage from './pages/HomePage';
+
 // Pages légales
 import MentionsLegales from './pages/legal/MentionsLegales';
 import DonneesPersonnelles from './pages/legal/DonneesPersonnelles';
@@ -21,14 +24,7 @@ function App() {
 
         {/* Routes */}
         <Routes>
-            <Route path='/' element={
-                <main className='flex-grow-1 d-flex flex-column'>
-                    <div className='container-fluid flex-grow-1 d-flex flex-column justify-content-center align-items-center text-center'>
-                        <h2><i className="bi bi-cone-striped h2"></i> Page d'accueil <i className="bi bi-cone-striped h2"></i></h2>
-                        <p>Le contenu arrive bientôt...</p>
-                    </div>
-                </main>
-            } />
+            <Route path='/' element={<HomePage />} />
 
             {/* Pages légales */}
             <Route path='/mentions-legales' element={<MentionsLegales />} />
