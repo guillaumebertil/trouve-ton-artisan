@@ -3,7 +3,7 @@ const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
-require('dotenv').config;
+require('dotenv').config();
 
 const sequelize = require('./config/database');
 const { errorHandler, notFound } = require('./middleware/errorHandler');
@@ -20,7 +20,7 @@ app.use(helmet());
 
 // Configuration CORS
 const corsOptions = {
-    origin: process.env.FRONTEND_URL || 'http://localhost3000',
+    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'x-api-key'],
     credentials: true
@@ -79,7 +79,7 @@ app.use(errorHandler);
 // Démarrage du serveur
 // ========================================
 
-const startSever = async () => {
+const startServer = async () => {
     try {
         // Test de connexion à la base de données
         await sequelize.authenticate();
@@ -104,6 +104,6 @@ const startSever = async () => {
     }
 };
 
-startSever();
+startServer();
 
 module.exports = app;

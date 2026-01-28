@@ -1,6 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const HomePage = () => {
+    // Variables pour stocker les artisans
+    const [artisans, setArtisans] = useState([]);
+
+    // Fonction qui charge les artisans depuis l'API
+    useEffect(() => {
+        // Appeler l'API
+        fetch('http://localhost:5000/api/artisans/top', {
+            headers: {
+                'x-api-key': 'iA85qs10D4XVM8YC'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Données reçues:', data);
+            setArtisans(data.data);
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+        });
+    }, []);
     return (
         <main className='flex-grow-1'>
             {/* SECTION 1 : HERO */}
@@ -59,65 +79,39 @@ const HomePage = () => {
                     <h2 className='text-center mb-5'>Les artisans du mois</h2>
 
                     <div className='row'>
-                        {/* Artisan 1 - TEMPORAIRE */}
-                        <div className='col-md-4 mb-4'>
-                            <div className='card'>
-                                <div className='card-header'>
-                                    <h3>Nom de l'artisan</h3>
-                                </div>
-                                <div className='card-body'>
-                                    <div className='rating mb-3'>
-                                        <i className='bi bi-star-fill text-danger me-1'></i>
-                                        <i className='bi bi-star-fill text-danger mx-1'></i>
-                                        <i className='bi bi-star-fill text-danger mx-1'></i>
-                                        <i className='bi bi-star-fill text-danger mx-1'></i>
-                                        <i className='bi bi-star-fill text-danger ms-1'></i>
-                                    </div>
-                                    <p><strong>Spécialité: </strong>Boulanger</p>
-                                    <p><i className='bi bi-geo-alt'></i> Lyon</p>
-                                </div>
-                            </div>
-                        </div>
+                        {/* Boucle sur les artisans */}
+                        {artisans.map((artisan) => (
+                            <div key={artisan.id} className='col-md-4 mb-4'>
 
-                        {/* Artisan 2 - TEMPORAIRE */}
-                        <div className='col-md-4 mb-4'>
-                            <div className='card'>
-                                <div className='card-header'>
-                                    <h3>Nom de l'artisan</h3>
-                                </div>
-                                <div className='card-body'>
-                                    <div className='rating mb-3'>
-                                        <i className='bi bi-star-fill text-danger me-1'></i>
-                                        <i className='bi bi-star-fill text-danger mx-1'></i>
-                                        <i className='bi bi-star-fill text-danger mx-1'></i>
-                                        <i className='bi bi-star-fill text-danger mx-1'></i>
-                                        <i className='bi bi-star-fill text-danger ms-1'></i>
-                                    </div>
-                                    <p><strong>Spécialité: </strong>Electricien</p>
-                                    <p><i className='bi bi-geo-alt'></i> Chamonix</p>
-                                </div>
-                            </div>
-                        </div>
+                                {/* Card artisans */}
+                                <div className='card'>
 
-                        {/* Artisan 3 - TEMPORAIRE */}
-                        <div className='col-md-4 mb-4'>
-                            <div className='card'>
-                                <div className='card-header'>
-                                    <h3>Nom de l'artisan</h3>
-                                </div>
-                                <div className='card-body'>
-                                    <div className='rating mb-3'>
-                                        <i className='bi bi-star-fill text-danger me-1'></i>
-                                        <i className='bi bi-star-fill text-danger mx-1'></i>
-                                        <i className='bi bi-star-fill text-danger mx-1'></i>
-                                        <i className='bi bi-star-fill text-danger mx-1'></i>
-                                        <i className='bi bi-star-fill text-danger ms-1'></i>
+                                    {/* Card Header */}
+                                    <div className='card-header'>
+                                        <h3>{artisan.name}</h3>
                                     </div>
-                                    <p><strong>Spécialité: </strong>Chcocolatier</p>
-                                    <p><i className='bi bi-geo-alt'></i> Lyon</p>
+
+                                    {/* Card Body */}
+                                    <div className='card-body'>
+
+                                        {/* Note */}
+                                        <div className='rating mb-3'>
+                                            <i className='bi bi-star-fill text-danger me-1'></i>
+                                            <i className='bi bi-star-fill text-danger mx-1'></i>
+                                            <i className='bi bi-star-fill text-danger mx-1'></i>
+                                            <i className='bi bi-star-fill text-danger mx-1'></i>
+                                            <i className='bi bi-star-fill text-danger ms-1'></i>
+                                        </div>
+
+                                        {/* Spécialité */}
+                                        <p><strong>Spécialité: </strong>{artisan.speciality.name}</p>
+
+                                        {/* Localisation */}
+                                        <p><i className='bi bi-geo-alt'></i>{artisan.location}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        ))};
 
                     </div>
                 </div>
