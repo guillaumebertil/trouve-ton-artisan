@@ -24,7 +24,7 @@ const Footer = () => {
                     <div className="col-12">
                         <ul className="list-inline d-flex flex-wrap justify-content-center">
                             <li className="list-inline-item mx-2"><Link className="nav-link" to="/mentions-legales">Mentions légales</Link></li>
-                            <li className="list-inline-item mx-2"><Link className="nav-link" to="/donnes-personnelles">Données personnelles</Link></li>
+                            <li className="list-inline-item mx-2"><Link className="nav-link" to="/donnees-personnelles">Données personnelles</Link></li>
                             <li className="list-inline-item mx-2"><Link className="nav-link" to="/accessibilite">Accessibilité</Link></li>
                             <li className="list-inline-item mx-2"><Link className="nav-link" to="/cookies">Cookies</Link></li>
                         </ul>
