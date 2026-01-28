@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import StarRating from '../components/common/StarRating';
+
 const HomePage = () => {
     // Variables pour stocker les artisans
     const [artisans, setArtisans] = useState([]);
@@ -96,11 +98,7 @@ const HomePage = () => {
 
                                         {/* Note */}
                                         <div className='rating mb-3'>
-                                            <i className='bi bi-star-fill text-danger me-1'></i>
-                                            <i className='bi bi-star-fill text-danger mx-1'></i>
-                                            <i className='bi bi-star-fill text-danger mx-1'></i>
-                                            <i className='bi bi-star-fill text-danger mx-1'></i>
-                                            <i className='bi bi-star-fill text-danger ms-1'></i>
+                                            <StarRating note={artisan.note} />
                                         </div>
 
                                         {/* Spécialité */}
