@@ -7,6 +7,7 @@ import Footer from './components/layout/Footer';
 import HomePage from './pages/HomePage';
 import CategoryPage from './pages/CategoryPages';
 import ArtisanDetailPage from './pages/ArtisanDetailPage';
+import SearchResultsPage from './pages/SearchResultatsPage';
 
 // Pages légales
 import MentionsLegales from './pages/legal/MentionsLegales';
@@ -34,6 +35,9 @@ function App() {
 
             {/* Page détail artisan */}
             <Route path='/artisan/:id' element={<ArtisanDetailPage />} />
+
+            {/* Page recherche */}
+            <Route path='/recherche' element={<SearchResultsPage />} />
 
             {/* Pages légales */}
             <Route path='/mentions-legales' element={<MentionsLegales />} />

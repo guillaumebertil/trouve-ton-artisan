@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Header() {
-    // Variable pour stocker les catégories
+    // Variables
     const [categories, setCategories] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
+    const navigate = useNavigate();
 
     // Charger les catégories depuis l'API
     useEffect(() => {
@@ -23,6 +25,15 @@ function Header() {
         });
     }, []);
 
+    // Gérer la soumission du formulaire de recherche
+    const handleSearch = (e) => {
+        e.preventDefault();
+        if (searchTerm.trim()) {
+            navigate(`/recherche?q=${encodeURIComponent(searchTerm)}`);
+            setSearchTerm('');  // Vider la barre de recherche
+        }
+    }
+
     return (
         <header>
             <div className="container">
@@ -40,8 +51,18 @@ function Header() {
 
                     {/* 2. RECHERCHE */}
                     <div className="flex-grow-1 d-flex justify-content-center d-none d-lg-flex">
-                        <form className="d-flex" style={{ width: '100%', maxWidth: '400px' }}>
-                            <input className="form-control me-2" type="search" placeholder="Chercher un artisan" />
+                        <form
+                            className="d-flex"
+                            style={{ width: '100%', maxWidth: '400px' }}
+                            onSubmit={handleSearch}
+                        >
+                            <input
+                                className="form-control me-2"
+                                type="search"
+                                placeholder="Chercher un artisan"
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                            />
                             <button className="btn btn-submit" type="submit">Recherche</button>
                         </form>
                     </div>
