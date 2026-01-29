@@ -8,6 +8,7 @@ import HomePage from './pages/HomePage';
 import CategoryPage from './pages/CategoryPages';
 import ArtisanDetailPage from './pages/ArtisanDetailPage';
 import SearchResultsPage from './pages/SearchResultatsPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 // Pages légales
 import MentionsLegales from './pages/legal/MentionsLegales';
@@ -44,6 +45,9 @@ function App() {
             <Route path='/donnees-personnelles' element={<DonneesPersonnelles />} />
             <Route path='/accessibilite' element={<Accessibilite />} />
             <Route path='/cookies' element={<Cookies />} />
+
+            {/* Page 404 */}
+            <Route path='*' element={<NotFoundPage />} />
 
         </Routes>
 
