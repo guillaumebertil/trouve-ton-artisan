@@ -6,7 +6,7 @@ const NotFoundPage = () => {
         <main className='flex-grow-1 d-flex align-items-center'>
             <div className='container text-center py-5'>
 
-                {/* Icône */}
+                {/* Image */}
                 <div className='mb-4'>
                     <img src='/404_not_found.png' alt='erreur 404' className='errorImg'/>
                 </div>

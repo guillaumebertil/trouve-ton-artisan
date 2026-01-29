@@ -4,6 +4,10 @@ body {
     font-family: $font-family-base;
 }
 
+body p {
+    color: $dark-grey;
+}
+
 // Titres
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
