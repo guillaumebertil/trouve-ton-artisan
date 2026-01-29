@@ -5,6 +5,7 @@ import Footer from './components/layout/Footer';
 
 // Pages
 import HomePage from './pages/HomePage';
+import CategoryPage from './pages/CategoryPages';
 
 // Pages légales
 import MentionsLegales from './pages/legal/MentionsLegales';
@@ -24,7 +25,11 @@ function App() {
 
         {/* Routes */}
         <Routes>
+            {/* Page d'accueil */}
             <Route path='/' element={<HomePage />} />
+
+            {/* Page categorie */}
+            <Route path='/categorie/:categoryId' element={<CategoryPage />} />
 
             {/* Pages légales */}
             <Route path='/mentions-legales' element={<MentionsLegales />} />
