@@ -3,7 +3,13 @@ footer {
     color: $middle-blue
 }
 
+/* Logo */
 .footer-logo {
     width: 30vh;
     height: auto; 
+}
+
+/* Bordure */
+.footer-border {
+    border-bottom-color: $middle-blue !important;
 }

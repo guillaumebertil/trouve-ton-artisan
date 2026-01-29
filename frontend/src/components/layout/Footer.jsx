@@ -7,18 +7,19 @@ const Footer = () => {
             <div className="container">
                 <div className="row align-items-center mb-5 text-center">
                     
-                    <div className="col-md-6">
-                        <img src="/Logo.png" alt="Logo" className="footer-logo"/>
-                    </div>
-
-                    <div className="col-md-6">
-                        <address>
-                            <p>101 cours Charlemagne</p>
-                            <p>CS 20033</p>
-                            <p>69269 LYON CEDEX 02</p>
-                            <p>France</p>
-                            <p>+33 (0)4 26 73 40 00</p>
-                        </address>
+                    <div className='container d-flex row border-bottom mb-4 footer-border'>
+                        <div className="col-md-6">
+                            <img src="/Logo.png" alt="Logo" className="footer-logo"/>
+                        </div>
+                        <div className="col-md-6 py-5">
+                            <address>
+                                <p>101 cours Charlemagne</p>
+                                <p>CS 20033</p>
+                                <p>69269 LYON CEDEX 02</p>
+                                <p>France</p>
+                                <p>+33 (0)4 26 73 40 00</p>
+                            </address>
+                        </div>
                     </div>
 
                     <div className="col-12">
