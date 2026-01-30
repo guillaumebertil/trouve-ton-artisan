@@ -70,11 +70,6 @@ const Artisan = sequelize.define('Artisan', {
         type: DataTypes.BOOLEAN,
         defaultValue: false,
         // Indique si l'artisan fait parti des artisans mis en avant
-    },
-    image_url: {
-        type: DataTypes.STRING(255),
-        allowNull: true,
-        // URL de l'image ou logo de l'artisan
     }
 }, {
     tableName: 'artisans',
