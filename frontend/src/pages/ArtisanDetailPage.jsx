@@ -86,6 +86,14 @@ const ArtisanDetailPage = () => {
                     {/* Colonne gauche: Infos artisan */}
                     <div className='col-lg-8 mb-4'>
 
+                        {/* Avatar de l'artisan */}
+                        <div className='mb-4'>
+                            <i
+                                className='bi bi-person-circle'
+                                style={{ fontSize: '8rem', color: '#384050'}}
+                            ></i>
+                        </div>
+
                         {/* Nom */}
                         <h1 className='mb-3'>{artisan.name}</h1>
 
