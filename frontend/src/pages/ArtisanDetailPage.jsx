@@ -155,6 +155,7 @@ const ArtisanDetailPage = () => {
                                             className='form-control'
                                             id='name'
                                             name='name'
+                                            placeholder='Veuillez entrer votre nom'
                                             value={formData.name}
                                             onChange={handleChange}
                                             required
@@ -169,6 +170,7 @@ const ArtisanDetailPage = () => {
                                             className='form-control'
                                             id='email'
                                             name='email'
+                                            placeholder='Veuillez entrer votre email'
                                             value={formData.email}
                                             onChange={handleChange}
                                             required
@@ -183,6 +185,7 @@ const ArtisanDetailPage = () => {
                                             className='form-control'
                                             id='subject'
                                             name='subject'
+                                            placeholder="Veuillez entrer l'objet de votre message"
                                             value={formData.subject}
                                             onChange={handleChange}
                                             required
@@ -197,6 +200,7 @@ const ArtisanDetailPage = () => {
                                             id='message'
                                             name='message'
                                             rows='4'
+                                            placeholder='Votre message'
                                             value={formData.message}
                                             onChange={handleChange}
                                             required

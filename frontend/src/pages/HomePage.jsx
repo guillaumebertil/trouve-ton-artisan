@@ -30,7 +30,7 @@ const HomePage = () => {
             <section className='hero'>
                 <div className='container text-center py-5'>
                     <h1>Trouvez l'artisan qu'il vous faut</h1>
-                    <p>Plus de 221 000 artisans qualifié en Auvergne-Rhône-Alpes</p>
+                    <p>Plus de 221 000 artisans qualifiés en Auvergne-Rhône-Alpes</p>
                 </div>
             </section>
 
@@ -60,7 +60,7 @@ const HomePage = () => {
                         <div className='col-md-6 col-lg-3 mb4'>
                             <div className='step-card text-center'>
                                 <h3>3 - Le contacter</h3>
-                                <p>Le contacter vie le formulaire.</p>
+                                <p>Le contacter via le formulaire.</p>
                             </div>
                         </div>
 
